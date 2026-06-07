@@ -1,0 +1,21 @@
+allowBuilds:
+  msw: false
+catalog:
+  vite: npm:@voidzero-dev/vite-plus-core@latest
+  vitest: npm:@voidzero-dev/vite-plus-test@latest
+  vite-plus: latest
+minimumReleaseAgeExclude:
+  - "@tanstack/react-router@1.170.15"
+  - "@tanstack/router-core@1.171.13"
+  - "@tanstack/router-generator@1.167.17"
+  - "@tanstack/router-plugin@1.168.18"
+overrides:
+  vite: "catalog:"
+  vitest: "catalog:"
+peerDependencyRules:
+  allowAny:
+    - vite
+    - vitest
+  allowedVersions:
+    vite: "*"
+    vitest: "*"
