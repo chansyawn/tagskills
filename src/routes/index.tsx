@@ -8,30 +8,62 @@ import {
 } from "@/ui/components/breadcrumb";
 import { Separator } from "@/ui/components/separator";
 import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/ui/components/sidebar";
-import { AppSidebar } from "./-features/app-sidebar";
 import { createFileRoute } from "@tanstack/react-router";
+import { useLingui } from "@lingui/react";
+import { Trans } from "@lingui/react/macro";
+
+import { AppSidebar } from "./-features/sidebar/app-sidebar";
 
 export const Route = createFileRoute("/")({
   component: IndexPage,
 });
 
 export default function IndexPage() {
+  const { i18n } = useLingui();
+  const sidebarToggleLabel = i18n._({
+    id: "sidebar.toggle",
+    message: "Toggle Sidebar",
+  });
+  const sidebarTitle = i18n._({
+    id: "sidebar.mobile.title",
+    message: "Sidebar",
+  });
+  const sidebarDescription = i18n._({
+    id: "sidebar.mobile.description",
+    message: "Displays the mobile sidebar.",
+  });
+  const closeLabel = i18n._({
+    id: "common.close",
+    message: "Close",
+  });
+
   return (
     <SidebarProvider>
-      <AppSidebar />
+      <AppSidebar
+        labels={{ title: sidebarTitle, description: sidebarDescription, close: closeLabel }}
+      />
       <SidebarInset>
         <header className="flex h-16 shrink-0 items-center gap-2">
           <div className="flex items-center gap-2 px-4">
-            <SidebarTrigger className="-ml-1" />
+            <SidebarTrigger className="-ml-1" label={sidebarToggleLabel} />
             <Separator orientation="vertical" className="mr-2 data-[orientation=vertical]:h-4" />
-            <Breadcrumb>
+            <Breadcrumb
+              aria-label={i18n._({
+                id: "home.breadcrumb.aria",
+                message: "Breadcrumb",
+              })}
+            >
               <BreadcrumbList>
                 <BreadcrumbItem className="hidden md:block">
-                  <BreadcrumbLink href="#">Build Your Application</BreadcrumbLink>
+                  <BreadcrumbLink href="#">
+                    <Trans id="home.breadcrumb.section">Build Your Application</Trans>
+                  </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator className="hidden md:block" />
                 <BreadcrumbItem>
-                  <BreadcrumbPage>Data Fetching</BreadcrumbPage>
+                  <BreadcrumbPage>
+                    <Trans id="home.breadcrumb.page">Data Fetching</Trans>
+                  </BreadcrumbPage>
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>

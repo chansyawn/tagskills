@@ -1,0 +1,100 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: tagskills\n"
+"Language: pseudo\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#. js-lingui-explicit-id
+#: src/routes/index.tsx:35
+msgid "common.close"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/routes/index.tsx:51
+msgid "home.breadcrumb.aria"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/app/i18n.test.tsx:24
+#: src/routes/index.tsx:65
+msgid "home.breadcrumb.page"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/routes/index.tsx:59
+msgid "home.breadcrumb.section"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/routes/-features/sidebar/app-sidebar.tsx:95
+#: src/routes/-features/sidebar/app-sidebar.tsx:102
+msgid "settings.language.title"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/routes/-features/sidebar/app-sidebar.tsx:75
+msgid "settings.theme.dark"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/routes/-features/sidebar/app-sidebar.tsx:77
+msgid "settings.theme.light"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/routes/-features/sidebar/app-sidebar.tsx:79
+msgid "settings.theme.system"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/routes/-features/sidebar/app-sidebar.tsx:126
+#: src/routes/-features/sidebar/app-sidebar.tsx:135
+msgid "settings.theme.title"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/routes/index.tsx:31
+msgid "sidebar.mobile.description"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/routes/index.tsx:27
+msgid "sidebar.mobile.title"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/routes/-features/sidebar/app-sidebar.tsx:50
+msgid "sidebar.nav.dashboard"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/routes/-features/sidebar/app-sidebar.tsx:66
+msgid "sidebar.nav.docs"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/routes/-features/sidebar/app-sidebar.tsx:61
+msgid "sidebar.nav.skills"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/routes/-features/sidebar/app-sidebar.tsx:56
+msgid "sidebar.nav.tags"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/routes/index.tsx:23
+msgid "sidebar.toggle"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/routes/-features/sidebar/app-sidebar.tsx:173
+msgid "sidebar.workspace.description"
+msgstr ""

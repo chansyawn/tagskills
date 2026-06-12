@@ -1,7 +1,13 @@
+@import "@fontsource-variable/inter";
+
 @import "tailwindcss";
+
+@source "./app";
+@source "./routes";
+@source "./ui/components";
+
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
-@import "@fontsource-variable/inter";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -120,11 +126,24 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    scrollbar-color: var(--ring) transparent;
+    scrollbar-width: thin;
   }
-  body {
-    @apply bg-background text-foreground;
-  }
+
   html {
-    @apply font-sans;
+    @apply bg-background text-foreground font-sans;
+  }
+
+  body {
+    @apply min-h-svh bg-background text-foreground;
+  }
+
+  .lucide {
+    width: 1em;
+    height: 1em;
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
   }
 }
