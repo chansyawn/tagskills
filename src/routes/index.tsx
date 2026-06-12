@@ -1,38 +1,51 @@
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/ui/components/breadcrumb";
+import { Separator } from "@/ui/components/separator";
+import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/ui/components/sidebar";
+import { AppSidebar } from "./-features/app-sidebar";
 import { createFileRoute } from "@tanstack/react-router";
-
-import { Button, buttonVariants } from "@/ui/components/button.tsx";
 
 export const Route = createFileRoute("/")({
   component: IndexPage,
 });
 
-function IndexPage() {
+export default function IndexPage() {
   return (
-    <section className="mx-auto flex min-h-svh w-full max-w-5xl flex-col items-center justify-center gap-10 px-6 py-16 text-center">
-      <div className="space-y-4">
-        <p className="text-sm font-medium tracking-[0.3em] text-muted-foreground uppercase">
-          tagskills
-        </p>
-        <h1 className="text-4xl font-semibold tracking-tight text-balance sm:text-6xl">
-          Vite+ React stack is ready.
-        </h1>
-        <p className="mx-auto max-w-2xl text-lg text-muted-foreground text-balance">
-          This starter is wired with React, Tailwind CSS v4, shadcn/ui, and TanStack Router
-          file-based routing.
-        </p>
-      </div>
-
-      <div className="flex flex-wrap items-center justify-center gap-3">
-        <Button>Start building</Button>
-        <a
-          className={buttonVariants({ variant: "outline" })}
-          href="https://tanstack.com/router/latest"
-          rel="noreferrer"
-          target="_blank"
-        >
-          Router docs
-        </a>
-      </div>
-    </section>
+    <SidebarProvider>
+      <AppSidebar />
+      <SidebarInset>
+        <header className="flex h-16 shrink-0 items-center gap-2">
+          <div className="flex items-center gap-2 px-4">
+            <SidebarTrigger className="-ml-1" />
+            <Separator orientation="vertical" className="mr-2 data-[orientation=vertical]:h-4" />
+            <Breadcrumb>
+              <BreadcrumbList>
+                <BreadcrumbItem className="hidden md:block">
+                  <BreadcrumbLink href="#">Build Your Application</BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator className="hidden md:block" />
+                <BreadcrumbItem>
+                  <BreadcrumbPage>Data Fetching</BreadcrumbPage>
+                </BreadcrumbItem>
+              </BreadcrumbList>
+            </Breadcrumb>
+          </div>
+        </header>
+        <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
+          <div className="grid auto-rows-min gap-4 md:grid-cols-3">
+            <div className="aspect-video rounded-xl bg-muted/50" />
+            <div className="aspect-video rounded-xl bg-muted/50" />
+            <div className="aspect-video rounded-xl bg-muted/50" />
+          </div>
+          <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min" />
+        </div>
+      </SidebarInset>
+    </SidebarProvider>
   );
 }
